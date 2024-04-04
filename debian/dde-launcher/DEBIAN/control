@@ -1,0 +1,13 @@
+Package: dde-launcher
+Version: 3.0.12
+Architecture: amd64
+Maintainer: Deepin Packages Builder <packages@deepin.com>
+Installed-Size: 2342
+Depends: qtxdg-dev-tools, deepin-desktop-schemas (>= 5.9.14), libdtkwidget5 (>= 5.4.19), libdtkcore5 (>= 5.4.14), libdtkgui5 (>= 5.4.13), libdframeworkdbus2 (>= 5.4.6), dde-daemon (>= 5.13.12), startdde (>= 5.8.9), lastore-daemon (>= 5.2.9), libxcb-util0 | libxcb-util1, dconf-gsettings-backend | gsettings-backend
+Conflicts: dde-workspace (<< 2.90.5)
+Section: x11
+Priority: optional
+Homepage: http://www.deepin.org/
+Description: deepin desktop-environment - dde-launcher module
+ Deepin desktop environment 2015 - dde-launcher module.
+ Display all installation programs, and provide access to open, uninstall, boot and start, which is convenient for users to operate quickly

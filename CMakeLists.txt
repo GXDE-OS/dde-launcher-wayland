@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.7)
 
 set(VERSION 4.0)
 
-project(dde-launcher)
+project(dde-launcher-wayland)
 
 #set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_STANDARD 14)
@@ -33,7 +33,7 @@ if (DEFINED WITHOUT_UNINSTALL_APP)
     add_definitions(-DWITHOUT_UNINSTALL_APP)
 endif ()
 
-set(BIN_NAME dde-launcher)
+set(BIN_NAME dde-launcher-wayland)
 
 add_subdirectory("tests")
 
@@ -140,21 +140,21 @@ target_link_libraries(${BIN_NAME} PRIVATE
 
 ## qm files
 file(GLOB QM_FILES "translations/*.qm")
-install(FILES ${QM_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/dde-launcher/translations)
+install(FILES ${QM_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/dde-launcher-wayland/translations)
 
 ## desktop file
-install(FILES dde-launcher.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/applications/)
-install(FILES dde-launcher-wapper DESTINATION ${CMAKE_INSTALL_BINDIR} PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+#install(FILES dde-launcher-wayland.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/applications/)
+#install(FILES dde-launcher-wayland-wapper DESTINATION ${CMAKE_INSTALL_BINDIR} PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
 
 ## services files
-install(FILES src/dbusservices/com.deepin.dde.Launcher.service DESTINATION ${CMAKE_INSTALL_DATADIR}/dbus-1/services)
+#install(FILES src/dbusservices/com.deepin.dde.Launcher.service DESTINATION ${CMAKE_INSTALL_DATADIR}/dbus-1/services)
 
 #schemas
-install(FILES gschema/com.deepin.dde.launcher.gschema.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/glib-2.0/schemas)
-install(CODE "execute_process(COMMAND glib-compile-schemas ${CMAKE_INSTALL_PREFIX}/share/glib-2.0/schemas)")
+#install(FILES gschema/com.deepin.dde.launcher.gschema.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/glib-2.0/schemas)
+#install(CODE "execute_process(COMMAND glib-compile-schemas ${CMAKE_INSTALL_PREFIX}/share/glib-2.0/schemas)")
 
 ## icon
-install(FILES data/deepin-launcher.svg DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps)
+#install(FILES data/deepin-launcher.svg DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps)
 
 # bin
 install(TARGETS ${BIN_NAME} DESTINATION ${CMAKE_INSTALL_BINDIR})
