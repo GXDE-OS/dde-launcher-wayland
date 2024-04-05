@@ -33,7 +33,7 @@ Depends:
  libdframeworkdbus2 (>=5.4.6),
  dde-daemon,
  startdde,
- lastore-daemon (>=5.2.9),
+ lastore-daemon,
  libxcb-util0 | libxcb-util1,
  ${misc:Depends},
  ${shlibs:Depends},
